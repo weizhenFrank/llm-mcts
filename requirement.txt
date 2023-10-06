@@ -1,0 +1,6 @@
+torch
+ipdb
+scipy
+tqdm
+sentence_transformers
+openai

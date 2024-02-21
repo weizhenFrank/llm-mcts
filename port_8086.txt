@@ -269,3 +269,36 @@ Processing
 Waiting for request 
 (Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 39)
 
+Received request: {"id": "1708550545.1406584", "action": "render_script", "stringParams": ["{\"randomize_execution\": false, \"random_seed\": -1, \"processing_time_limit\": 10, \"skip_execution\": false, \"output_folder\": \"Output/\", \"file_name_prefix\": \"script\", \"frame_rate\": 5, \"image_synthesis\": [], \"find_solution\": false, \"save_pose_data\": false, \"save_scene_states\": false, \"camera_mode\": [\"AUTO\"], \"recording\": false, \"image_width\": 640, \"image_height\": 480, \"time_scale\": 1.0, \"skip_animation\": true}", "<char0> [walk] <bedroom> (210)"]} 
+(Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 39)
+
+Processing 
+(Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 39)
+
+Process... 
+(Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 39)
+
+0 
+(Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 39)
+
+GOAL POSITION: (7.5, 0.0, -3.7) 
+(Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 39)
+
+processWalkTo time: 7 
+(Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 39)
+
+prepare time: 0 
+(Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 39)
+
+Waiting for request 
+(Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 39)
+
+Received request: {"id": "1708550545.260752", "action": "environment_graph"} 
+(Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 39)
+
+Processing 
+(Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 39)
+
+Waiting for request 
+(Filename: ./Runtime/Export/Debug/Debug.bindings.h Line: 39)
+

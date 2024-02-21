@@ -14,7 +14,7 @@ from vh.vh_sim.simulation.evolving_graph.utils import load_graph_dict, load_name
 from vh.vh_sim.simulation.evolving_graph.execution import ScriptExecutor, ExecutionInfo
 from vh.vh_sim.simulation.evolving_graph.scripts import read_script_from_string, Action
 from vh.vh_sim.simulation.evolving_graph.environment import *
-from profilehooks import profile
+# from profilehooks import profile
 
 
 class VhGraphEnv(gym.Env):

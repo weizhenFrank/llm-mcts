@@ -11,7 +11,7 @@ import pickle
 from mcts.virtualhome.expert_data import get_action_list_valid
 import time
 
-openai.api_key = "Your Key"
+openai.api_key = "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"
 MAX_STEPS = 20  # maximum number of steps to be generated
 CUTOFF_THRESHOLD = 0.8  # early stopping threshold based on matching score and likelihood score
 P = 0.5  # hyperparameter for early stopping heuristic to detect whether Planning LM believes the plan is finished
@@ -97,7 +97,7 @@ Now, answer the following questions:\n
         self.grabable_list_embedding = self.translation_lm.encode(self.grabable_list, batch_size=8,
                 convert_to_tensor=True, device=self.device)
         self.position_list =  self.container_list + self.surface_list
-        self.position_list_embedding = torch.concat((self.container_list_embedding, self.surface_list_embedding), dim=0)
+        self.position_list_embedding = torch.cat((self.container_list_embedding, self.surface_list_embedding), dim=0)
         self.room_embedding = self.translation_lm.encode(['living room', 'kitchen', 'bedroom', 'bathroom'], batch_size=8,
                 convert_to_tensor=True, device=self.device)
         self.room_list = ['livingroom', 'kitchen', 'bedroom', 'bathroom']
@@ -381,7 +381,11 @@ Now, answer the following questions:\n
                 if '' in sample_:
                     sample_.remove('')
                 if len(sample_) != 2:
-                    samples.append([sample_[0], sample_[1] + ' ' + sample_[2]])
+                    try:
+                        sample_ = [sample_[0], sample_[1] + ' ' + sample_[2]]
+                    except IndexError:
+                        import pdb; pdb.set_trace()
+                    # samples.append([sample_[0], sample_[1] + ' ' + sample_[2]])
                 samples.append(sample_) 
         return samples
 
@@ -396,15 +400,18 @@ Now, answer the following questions:\n
             object_positions[object] = samples
             # print(object_positions[object])
         # print(object_positions)   
-        object_positions = {}
+        
         # save samples
+        print("saving to ./data/object_all_positions.json")
         json.dump(object_positions, open("./data/object_all_positions.json", "w"))
+        object_positions = {}
         for object in self.furniture_list:
             samples = self.query_llm(f"Question: What is the most possible position of {object}?\nAnswer: ", "", "", 1)
             object_positions[object] = samples
             # print(object_positions[object])
         # print(object_positions)   
         # save samples
+        print("saving to ./data/furniture_all_positions.json")
         json.dump(object_positions, open("./data/furniture_all_positions.json", "w"))
 
     def call(self, request, response):

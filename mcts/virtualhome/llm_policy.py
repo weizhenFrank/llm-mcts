@@ -11,7 +11,7 @@ import pickle
 from mcts.virtualhome.expert_data import get_action_list_valid
 import time
 
-openai.api_key = "Your Key"
+openai.api_key = "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"
 MAX_STEPS = 20  # maximum number of steps to be generated
 CUTOFF_THRESHOLD = 0.8  # early stopping threshold based on matching score and likelihood score
 P = 0.5  # hyperparameter for early stopping heuristic to detect whether Planning LM believes the plan is finished

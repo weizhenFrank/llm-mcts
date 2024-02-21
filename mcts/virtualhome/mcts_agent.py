@@ -85,7 +85,7 @@ class mcts_vh_env:
         self.task_goal = task_goal
         self.vh_pyenv.pomdp = True
         self.model = None
-        self.env_task_set = pickle.load(open('./vh/dataset/env_task_set_3_simple.pik', 'rb'))
+        self.env_task_set = pickle.load(open('./vh/dataset/env_task_set_500_simple.pik', 'rb'))
         self.history = []
         self.init_history = []
         self.cur_state_graph = graph
@@ -323,6 +323,7 @@ def parse_args():
     parser.add_argument('--load_path', default=None, type=str)
     parser.add_argument('--batch_size', default=128, type=int)
     parser.add_argument('--evaluate', default=True)
+    parser.add_argument('--seed', default=128, type=int)
     return parser.parse_args()
 
 def find_test_data_file_path(args):
